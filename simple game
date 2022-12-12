@@ -1,0 +1,30 @@
+# Import random module for random number generation
+import random
+
+# Generate a random number between 1 and 10
+secret_num = random.randint(1, 10)
+
+# Prompt user to guess the number
+guess = int(input("Guess the number between 1 and 10: "))
+
+# Keep track of number of guesses
+num_guesses = 1
+
+# Loop until correct number is guessed
+while guess != secret_num:
+  # If guess is higher than secret number, prompt user to guess lower
+  if guess > secret_num:
+    print("Guess lower!")
+  # If guess is lower than secret number, prompt user to guess higher
+  else:
+    print("Guess higher!")
+  
+  # Prompt user for another guess
+  guess = int(input("Guess again: "))
+  
+  # Increment number of guesses
+  num_guesses += 1
+
+# If loop ends, correct number was guessed
+print("You guessed it! The number was", secret_num)
+print("It took you", num_guesses, "guesses to get it right.")
